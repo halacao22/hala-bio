@@ -2,62 +2,135 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hala_77 - Link Bio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hala_77 - Link Bio Neon + Nền Video</title>
   <style>
-    body {
-      background: radial-gradient(circle at center, #111827, #000);
-      animation: pulseBg 10s ease-in-out infinite;
+    /* Reset & cơ bản */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-
-    @keyframes pulseBg {
-      0%, 100% { background-color: #0f172a; }
-      50% { background-color: #1f2937; }
+    body, html {
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+      color: #00ffe5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
     }
-
-    .neon-text {
-      text-shadow: 0 0 5px #00ffe5, 0 0 10px #00ffe5, 0 0 20px #00ffe5;
+    /* Nền video full */
+    #bg-video {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.3) saturate(1.2);
     }
-
-    .neon-button {
-      box-shadow: 0 0 5px #00ffe5, 0 0 10px #00ffe5, 0 0 15px #00ffe5;
-      transition: transform 0.3s, box-shadow 0.3s;
+    /* Khung chính */
+    .container {
+      background: rgba(0,0,0,0.6);
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow:
+        0 0 15px #00ffe5,
+        0 0 30px #00ffe5,
+        0 0 45px #00ffe5;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
     }
-    .neon-button:hover {
+    /* Tiêu đề neon */
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 8px;
+      text-shadow:
+        0 0 5px #00ffe5,
+        0 0 10px #00ffe5,
+        0 0 20px #00ffe5,
+        0 0 40px #00ffe5;
+      color: #00e0ff;
+    }
+    p.description {
+      margin-bottom: 25px;
+      color: #a0f0ffcc;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    /* Nút neon */
+    a.button {
+      display: block;
+      background: rgba(0,255,229,0.15);
+      color: #00ffe5;
+      margin: 12px 0;
+      padding: 14px 0;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow:
+        0 0 8px #00ffe5,
+        0 0 16px #00ffe5;
+      transition: all 0.3s ease;
+      user-select: none;
+    }
+    a.button:hover {
+      background: rgba(0,255,229,0.4);
+      box-shadow:
+        0 0 12px #00ffff,
+        0 0 25px #00ffff,
+        0 0 40px #00ffff;
       transform: scale(1.05);
-      box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+    }
+    /* Avatar */
+    img.avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      margin: 0 auto 18px;
+      box-shadow:
+        0 0 10px #00ffe5,
+        0 0 25px #00ffe5;
+      border: 3px solid #00e0ff;
+      object-fit: cover;
+    }
+    /* Footer nhỏ */
+    footer {
+      margin-top: 35px;
+      font-size: 0.85rem;
+      color: #00ffe5aa;
     }
   </style>
 </head>
-<body class="text-white min-h-screen flex items-center justify-center px-4">
-  <div class="max-w-md w-full text-center space-y-6 py-10">
+<body>
+
+  <!-- Video nền -->
+  <video autoplay muted loop playsinline id="bg-video" preload="auto" poster="">
+    <source src="https://cdn.discordapp.com/attachments/1226181622424932465/1378701550192693289/a814a711-31fc-42b9-9622-d94a9235f286.mp4.mp4?ex=683d8f60&is=683c3de0&hm=7daa877d14c13613a72675cdcab0e7e870fb8483f855c7ff20998904683dc8d7&" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="container">
     <!-- Avatar -->
-    <img src="https://cdn.discordapp.com/attachments/1226181622424932465/1378692058331611326/meocon-removebg-preview.png?ex=683d8689&is=683c3509&hm=90cdf8111b702123eb8e0a530d3df081aae9561c0fbe6e094f8ed5335f8814d0&" 
-         alt="Avatar" class="w-24 h-24 rounded-full mx-auto shadow-lg border-4 border-cyan-400">
+    <img class="avatar" src="https://cdn.discordapp.com/attachments/1226181622424932465/1378692058331611326/meocon-removebg-preview.png?ex=683d8689&is=683c3509&hm=90cdf8111b702123eb8e0a530d3df081aae9561c0fbe6e094f8ed5335f8814d0&" alt="Avatar" />
 
-    <!-- Tên và mô tả -->
-    <h1 class="text-3xl font-bold neon-text">Hala_77</h1>
-    <p class="text-gray-400">🎮 Livestream mỗi ngày | Kết nối & chill cùng mình nhé!</p>
+    <h1>Hala_77</h1>
+    <p class="description">🎮 Livestream mỗi ngày | Kết nối & chill cùng mình nhé!</p>
 
-    <!-- Các nút liên kết -->
-    <div class="space-y-4 mt-6">
-      <a href="https://www.tiktok.com/@justocean_995" target="_blank" class="block neon-button bg-black text-cyan-300 font-semibold py-3 rounded-xl">🎵 TikTok Live</a>
+    <!-- Các nút -->
+    <a href="https://www.tiktok.com/@justocean_995" target="_blank" class="button">🎵 TikTok Live</a>
+    <a href="https://www.youtube.com/@hhala_77" target="_blank" class="button">▶️ YouTube Channel</a>
+    <a href="https://wescan.vn/hala_77ql" target="_blank" class="button">💸 Wescan Donate</a>
+    <a href="https://discord.gg/rwxATF9dZe" target="_blank" class="button">💬 Tham Gia Discord</a>
+    <a href="https://facebook.com/hala_77" target="_blank" class="button">📘 Facebook</a>
 
-      <a href="https://www.youtube.com/@hhala_77" target="_blank" class="block neon-button bg-black text-red-400 py-3 rounded-xl">▶️ YouTube Channel</a>
-
-      <a href="https://wescan.vn/hala_77ql" target="_blank" class="block neon-button bg-black text-yellow-400 py-3 rounded-xl">💸 Wescan Donate</a>
-
-      <a href="https://discord.gg/rwxATF9dZe" target="_blank" class="block neon-button bg-black text-indigo-400 py-3 rounded-xl">💬 Tham Gia Discord</a>
-
-      <a href="https://facebook.com/hala_77" target="_blank" class="block neon-button bg-black text-blue-400 py-3 rounded-xl">📘 Facebook</a>
-    </div>
-
-    <!-- Footer -->
-    <footer class="text-sm text-gray-500 mt-8">
-       2025 Hala_77 ❤️ Mazy
-    </footer>
+    <footer>2025 Hala_77 ❤️ Mazy
   </div>
+
 </body>
 </html>
+
 
